@@ -1,0 +1,12 @@
+Package: hercwidpi
+Title: utilities and specifications for parsing data from the WI DPI
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Ben", "Taft", , "ben.taft@career2cradle.org", role = c("aut", "cre")),
+    person("Higher Expectations for Racine County", role = "cph")
+  )
+Description: process data from the WI DPI about agencies and schools 
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
