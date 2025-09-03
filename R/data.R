@@ -1,7 +1,7 @@
 #' Column specification for data about performance on the Forward Exam
 #'
 #' @format ## `SPEC_FOR_FORWARD`
-#' A list of 21 elements
+#' A list of 20 elements
 #' \describe{
 #'   \item{SCHOOL_YEAR}{&lt;chr&gt; the school year, in YYYY-YY format}
 #'   \item{AGENCY_TYPE}{&lt;chr&gt; helps distinguish between district-run and independent charter schools}
@@ -21,7 +21,6 @@
 #'   \item{GROUP_BY}{&lt;chr&gt; demographic categories like race or gender}
 #'   \item{GROUP_BY_VALUE}{&lt;chr&gt; demographic groups like Asian or Trans}
 #'   \item{STUDENT_COUNT}{&lt;int&gt; the number of students with this test result}
-#'   \item{PERCENT_OF_GROUP}{&lt;dbl&gt; the fraction of the group with this test result}
 #'   \item{GROUP_COUNT}{&lt;int&gt; The number of students in this demographic category}
 #'   \item{FORWARD_AVERAGE_SCALE_SCORE}{&lt;dbl&gt; the mean Forward score in this group}
 #' }
@@ -32,6 +31,7 @@
 #' Column specification for data about High School Completion
 #'
 #' @format ## SPEC_FOR_HS_COMPLETION
+#' A list of 17 elements
 #' \describe{
 #'   \item{SCHOOL_YEAR}{&lt;chr&gt; the school year, in YYYY-YY format}
 #'   \item{AGENCY_TYPE}{&lt;chr&gt; helps distinguish between district-run and independent charter schools}
@@ -57,6 +57,7 @@
 #' Column specification for data about Post-secondary Enrollment
 #'
 #' @format ## SPEC_FOR_PS_ENROLLMENT
+#' A list of 18 elements
 #' \describe{
 #'   \item{SCHOOL_YEAR}{&lt;chr&gt; the school year, in YYYY-YY format}
 #'   \item{AGENCY_TYPE}{&lt;chr&gt; helps distinguish between district-run and independent charter schools}

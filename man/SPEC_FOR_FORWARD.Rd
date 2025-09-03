@@ -7,7 +7,7 @@
 \format{
 \subsection{\code{SPEC_FOR_FORWARD}}{
 
-A list of 21 elements
+A list of 20 elements
 \describe{
 \item{SCHOOL_YEAR}{<chr> the school year, in YYYY-YY format}
 \item{AGENCY_TYPE}{<chr> helps distinguish between district-run and independent charter schools}
@@ -27,7 +27,6 @@ A list of 21 elements
 \item{GROUP_BY}{<chr> demographic categories like race or gender}
 \item{GROUP_BY_VALUE}{<chr> demographic groups like Asian or Trans}
 \item{STUDENT_COUNT}{<int> the number of students with this test result}
-\item{PERCENT_OF_GROUP}{<dbl> the fraction of the group with this test result}
 \item{GROUP_COUNT}{<int> The number of students in this demographic category}
 \item{FORWARD_AVERAGE_SCALE_SCORE}{<dbl> the mean Forward score in this group}
 }
