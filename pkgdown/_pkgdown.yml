@@ -1,0 +1,24 @@
+url: https://higherx4racine.github.io/hercwidpi/
+template:
+  bootstrap: 5
+
+repo:
+  url:
+    home: https://github.com/higherX4Racine/hercwidpi
+
+destination: pkgdown/docs/
+
+reference:
+- title: WISEDash Public
+  desc: >
+    utilities for reading and wrangling data from WISEDash Public
+  contents:
+    - read_wisedash_public
+
+- title: Specifications
+  desc: >
+    Definitions that describe the contents of files from DPI sources
+  contents:
+  - SPEC_FOR_FORWARD
+  - SPEC_FOR_HS_COMPLETION
+  - SPEC_FOR_PS_ENROLLMENT

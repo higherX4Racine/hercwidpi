@@ -5,8 +5,25 @@ Authors@R: c(
     person("Ben", "Taft", , "ben.taft@career2cradle.org", role = c("aut", "cre")),
     person("Higher Expectations for Racine County", role = "cph")
   )
-Description: process data from the WI DPI about agencies and schools 
+Description: Work with files downloaded from the Wisconsin Department of Public
+  Instruction. The basic action is to parse annual text files and wrangle them
+  into tidy multi-year tables. There are utilities for summarizing -- by area,
+  agency, or demographic grouping. Additional tools use percentiles to compare
+  across otherwise incompatible test results. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
+URL: https://higherx4racine.github.io/hercwidpi/
+Imports: 
+    purrr,
+    readr,
+    rlang
+Remotes:
+    higherx4racine/hercipeds
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Depends: 
+    R (>= 3.5)
+LazyData: true
