@@ -1,0 +1,88 @@
+---
+title: "Third Grade Reading"
+---
+
+```{r}
+#| include: false
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  cache = TRUE
+)
+```
+
+```{r}
+#| label: declare-local-settings
+FORWARD_DATA_PATH <- "DATA_PATH" |>
+    Sys.getenv() |>
+    file.path(
+        "Downloads",
+        "WISEDash",
+        "Forward Exam"
+    )
+```
+
+```{r}
+#| label: load-local-files
+#| dependson: declare-local-settings
+
+THIRD_GRADE_READING <- FORWARD_DATA_PATH |>
+    dir(
+        pattern = "\\d\\.csv",
+        full.names = TRUE
+    ) |>
+    hercwidpi::read_wisedash_public(
+        .spec = hercwidpi::SPEC_FOR_FORWARD
+    ) |>
+    dplyr::filter(
+        .data$GRADE_LEVEL == 3L,
+        .data$TEST_SUBJECT == "ELA"
+    )
+```
+
+```{r}
+#| label: racine-unified-results
+#| dependson: load-local-files
+
+RACINE <- THIRD_GRADE_READING |>
+    dplyr::filter(
+        .data$DISTRICT_CODE == 4620L,
+        .data$CHARTER_IND != "Yes"
+    ) |>
+    dplyr::select(
+        tidyselect::where(\(.) dplyr::n_distinct(.) > 1L)
+    )
+
+str(RACINE)
+```
+
+```{r}
+#| label: examine-schools
+RACINE |>
+    dplyr::mutate(
+        SCHOOL_NAME = .data$SCHOOL_NAME |>
+            stringr::str_remove(stringr::regex("Elementary|School",
+                                               ignore_case = TRUE)) |>
+            stringr::str_squish()
+    ) |>
+    dplyr::count(
+        .data$SCHOOL_CODE,
+        .data$SCHOOL_NAME,
+        name = "Frequency"
+    ) |>
+    knitr::kable()
+```
+
+
+```{r}
+#| label: inspect-wadewitz-detail
+RACINE |>
+    dplyr::filter(
+        .data$SCHOOL_YEAR == dplyr::last(.data$SCHOOL_YEAR),
+        .data$SCHOOL_CODE == "0162"
+    ) |>
+    dplyr::select(
+        tidyselect::where(\(.) dplyr::n_distinct(.) > 1L)
+    ) |>
+    knitr::kable()
+```

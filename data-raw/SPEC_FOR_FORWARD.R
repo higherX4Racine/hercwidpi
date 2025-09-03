@@ -19,7 +19,7 @@ SPEC_FOR_FORWARD <- list(
     GROUP_BY = "c",
     GROUP_BY_VALUE = "c",
     STUDENT_COUNT = "i",
-    PERCENT_OF_GROUP = "n",
+    PERCENT_OF_GROUP = "-",
     GROUP_COUNT = "i",
     FORWARD_AVERAGE_SCALE_SCORE = "n"
 )

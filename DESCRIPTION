@@ -16,14 +16,17 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 URL: https://higherx4racine.github.io/hercwidpi/
 Imports: 
+    dplyr,
     purrr,
     readr,
     rlang
 Remotes:
     higherx4racine/hercipeds
 Suggests: 
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    tidyselect
 Config/testthat/edition: 3
 Depends: 
-    R (>= 3.5)
+    R (>= 4.1.0)
 LazyData: true
+Config/Needs/website: rmarkdown

@@ -7,6 +7,7 @@
 \format{
 \subsection{SPEC_FOR_HS_COMPLETION}{
 
+A list of 17 elements
 \describe{
 \item{SCHOOL_YEAR}{<chr> the school year, in YYYY-YY format}
 \item{AGENCY_TYPE}{<chr> helps distinguish between district-run and independent charter schools}

@@ -7,6 +7,7 @@
 \format{
 \subsection{SPEC_FOR_PS_ENROLLMENT}{
 
+A list of 18 elements
 \describe{
 \item{SCHOOL_YEAR}{<chr> the school year, in YYYY-YY format}
 \item{AGENCY_TYPE}{<chr> helps distinguish between district-run and independent charter schools}
