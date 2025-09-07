@@ -1,0 +1,25 @@
+﻿SCHOOL_YEAR,AGENCY_TYPE,CESA,COUNTY,DISTRICT_CODE,SCHOOL_CODE,GRADE_GROUP,CHARTER_IND,DISTRICT_NAME,SCHOOL_NAME,TEST_SUBJECT,GRADE_LEVEL,TEST_RESULT,TEST_RESULT_CODE,TEST_GROUP,GROUP_BY,GROUP_BY_VALUE,STUDENT_COUNT,PERCENT_OF_GROUP,GROUP_COUNT,FORWARD_AVERAGE_SCALE_SCORE
+2023-24,School District,05,Wood,0203,,[All],No,Auburndale,[Districtwide],ELA,8,No Test,No Test,Forward,Migrant Status,Not Migrant,4,7.69,52,1632.92
+2023-24,School District,11,Dunn,1176,,[All],No,Colfax,[Districtwide],Mathematics,8,Approaching,2,Forward,All Students,All Students,15,29.41,51,1667.67
+2023-24,School District,02,Rock,1568,,[All],No,Edgerton,[Districtwide],Mathematics,6,Approaching,2,Forward,Economic Status,Econ Disadv,23,41.82,55,1608.36
+2023-24,Public school,07,Brown,2289,0660,Middle School,No,Green Bay Area Public,Washington Middle,Social Studies,8,Approaching,2,Forward,EL Status,EL,16,19.75,81,638.99
+2023-24,Public school,05,Wood,3339,0140,Elementary School,No,Marshfield Unified,Nasonville Elementary,Mathematics,4,Approaching,2,Forward,All Students,All Students,4,9.76,41,1606.66
+2023-24,Public school,01,Milwaukee,3619,0092,Elementary School,No,Milwaukee,Browning Elementary,Mathematics,5,Approaching,2,Forward,Gender,Male,1,5.26,19,1533
+2023-24,Public school,01,Milwaukee,3619,0155,Elementary School,No,Milwaukee,Fairview Elementary,Science,8,Developing,1,Forward,Gender,Female,11,34.38,32,675.94
+2023-24,Public school,11,Pierce,5586,0060,Elementary School,No,Spring Valley,Spring Valley Elementary,Science,4,*,*,DLM,Disability Status,[Data Suppressed],*,*,*,*
+2023-24,Public school,09,Marathon,6223,0280,Elementary School,No,Wausau,Rib Mountain Elementary,Science,4,Meeting,3,Forward,All Students,All Students,13,39.39,33,504.3
+2018-19,School District,11,Saint Croix,0231,,[All],No,Baldwin-Woodville Area,[Districtwide],ELA,8,Below Basic,1,Forward,Economic Status,Not Econ Disadv,13,13.98,93,656.6
+2018-19,School District,06,Fond du Lac,1862,,[All],No,Fond du Lac,[Districtwide],ELA,8,Proficient,3,Forward,Economic Status,Not Econ Disadv,95,34.67,274,641.79
+2018-19,Public school,01,Milwaukee,1900,0080,Elementary School,No,Franklin Public,Pleasant View Elementary,Mathematics,5,Below Basic,1,Forward,Race/Ethnicity,White,1,2.63,38,634.42
+2018-19,School District,01,Milwaukee,2296,,[All],No,Greendale,[Districtwide],Mathematics,4,Below Basic,1,Forward,Race/Ethnicity,Asian,2,16.67,12,597.58
+2018-19,School District,01,Milwaukee,2296,,[All],No,Greendale,[Districtwide],Mathematics,5,Advanced,4,Forward,Race/Ethnicity,Hispanic,4,14.29,28,615.61
+2018-19,Public school,02,Rock,2695,0240,Middle School,No,Janesville,Marshall Middle,ELA,7,Below Basic,1,Forward,All Students,All Students,60,19.29,311,626.76
+2018-19,Public school,07,Kewaunee,2814,0160,Middle School,No,Kewaunee,Kewaunee Middle,ELA,8,Below Basic,1,Forward,All Students,All Students,9,15.52,58,629.02
+2018-19,Public school,02,Dane,3269,0645,Elementary School,No,Madison Metropolitan,Randall Elementary,Social Studies,4,Proficient,3,Forward,Migrant Status,Not Migrant,17,14.78,115,433.37
+2018-19,Public school,09,Lincoln,3500,0260,Middle School,No,Merrill Area,Prairie River Middle,ELA,7,Basic,2,Forward,Race/Ethnicity,White,58,32.4,179,602.2
+2018-19,Public school,01,Milwaukee,3619,0110,Elementary School,No,Milwaukee,Clarke Street Elementary,Science,8,No Test,No Test,Forward,ELL Status,Eng Prof,1,4.55,22,638.86
+2018-19,Public school,01,Milwaukee,3619,0250,Elementary School,No,Milwaukee,Lincoln Avenue Elementary,ELA,4,Advanced,4,Forward,Race/Ethnicity,Hispanic,1,2.63,38,542.58
+2018-19,School District,01,Waukesha,3822,,[All],No,Mukwonago,[Districtwide],Social Studies,4,Below Basic,1,Forward,Race/Ethnicity,White,20,6.78,295,422.43
+2018-19,School District,05,Waushara,4375,,[All],No,Tri-County Area,[Districtwide],ELA,3,Proficient,3,Forward,Race/Ethnicity,White,11,37.93,29,557.28
+2018-19,Public school,01,Milwaukee,6244,0200,Elementary School,No,Wauwatosa,Roosevelt Elementary,Social Studies,4,Below Basic,1,Forward,Economic Status,Not Econ Disadv,4,8.7,46,452.37
+2018-19,Public school,05,Wood,6685,0280,Elementary School,No,Wisconsin Rapids,Washington Elementary,Mathematics,3,Basic,2,Forward,All Students,All Students,17,33.33,51,551.76

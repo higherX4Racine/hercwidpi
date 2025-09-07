@@ -24,6 +24,7 @@ Remotes:
     higherx4racine/hercipeds
 Suggests: 
     testthat (>= 3.0.0),
+    tibble,
     tidyselect
 Config/testthat/edition: 3
 Depends: 
