@@ -13,13 +13,22 @@ reference:
   desc: >
     utilities for reading and wrangling data from WISEDash Public
   contents:
-    - read_wisedash_public
+  - read_wisedash_public
 
-- title: Specifications
+- subtitle: Forward Exam
+  desc: >
+    specific utilities for data about the Forward Exam
+  contents:
+  - load_forward
+  - wrangle_forward
+  - is_tested
+  - is_proficient
+  - SPEC_FOR_FORWARD
+
+- subtitle: Specifications
   desc: >
     Definitions that describe the contents of files from DPI sources
   contents:
-  - SPEC_FOR_FORWARD
   - SPEC_FOR_HS_COMPLETION
   - SPEC_FOR_PS_ENROLLMENT
 
