@@ -67,6 +67,7 @@ load_forward <- function(.files) {
 #' @export
 wrangle_forward <- function(.forward_data, ..., .proficiency_threshold = 3L) {
 
+    .groups <- union(c(...), c("DISTRICT_CODE", "SCHOOL_CODE"))
     .forward_data |>
         dplyr::rename(
             Students = "GROUP_COUNT",
@@ -83,8 +84,13 @@ wrangle_forward <- function(.forward_data, ..., .proficiency_threshold = 3L) {
                           dplyr::first),
             dplyr::across(c("Tested", "Proficient"),
                           \(.)sum(., na.rm = TRUE)),
+            .by = tidyselect::all_of(.groups)
+        ) |>
+        dplyr::summarize(
+            dplyr::across(c("Students", "Score", "Tested", "Proficient"),
+                          \(.)sum(., na.rm = TRUE)),
             `Testing Rate` = .data$Tested / .data$Students,
             `Success Rate` = .data$Proficient / .data$Tested,
-            .by = c(...)
+            .by = tidyselect::all_of(c(...))
         )
 }
