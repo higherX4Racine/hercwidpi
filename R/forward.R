@@ -67,8 +67,9 @@ load_forward <- function(.files) {
 #' @export
 wrangle_forward <- function(.forward_data, ..., .proficiency_threshold = 3L) {
 
-    .groups <- union(c(...), c("DISTRICT_CODE", "SCHOOL_CODE"))
-    .forward_data |>
+    .groups <- c(...)
+
+    .tmp <- .forward_data |>
         dplyr::rename(
             Students = "GROUP_COUNT",
             Score = "FORWARD_AVERAGE_SCALE_SCORE"
@@ -84,14 +85,67 @@ wrangle_forward <- function(.forward_data, ..., .proficiency_threshold = 3L) {
                           dplyr::first),
             dplyr::across(c("Tested", "Proficient"),
                           \(.)sum(., na.rm = TRUE)),
-            .by = tidyselect::all_of(.groups)
+            .by = tidyselect::all_of(union(.groups,
+                                           c("DISTRICT_CODE", "SCHOOL_CODE")))
         ) |>
+        dplyr::mutate(
+            Score = .data$Score * .data$Students
+        )
+
+    if (!("SCHOOL_CODE" %in% .groups)) {
+        .tmp |>
+            dplyr::mutate(
+                Aggregation = dplyr::if_else(is.na(.data$SCHOOL_CODE),
+                                             "Above",
+                                             "School"),
+            ) |>
+            dplyr::summarize(
+                dplyr::across(c("Students", "Tested", "Proficient", "Score"),
+                              \(.)sum(., na.rm = TRUE)),
+                .by = tidyselect::all_of(union(.groups,
+                                               c("DISTRICT_CODE",
+                                                 "Aggregation")))
+
+            ) |>
+            tidyr::pivot_longer(
+                cols = c("Students", "Tested", "Proficient", "Score"),
+                names_to = "Measure",
+                values_to = "Value",
+                values_drop_na = FALSE
+            ) |>
+            dplyr::mutate(
+                Value = dplyr::coalesce(.data$Value, 0)
+            ) |>
+            tidyr::pivot_wider(
+                names_from = "Aggregation",
+                values_from = "Value",
+                values_fill = 0
+            ) |>
+            dplyr::mutate(
+                Value = purrr::map2_dbl(.data$Above, .data$School,
+                                        \(.a, .s) max(.a, .s))
+            ) |>
+            dplyr::summarize(
+                Value = sum(.data$Value),
+                .by = tidyselect::all_of(c(.groups, "Measure"))
+            ) |>
+            tidyr::pivot_wider(
+                names_from = "Measure",
+                values_from = "Value",
+                values_fill = 0
+            ) |>
+            dplyr::mutate(
+                dplyr::across(c("Students", "Tested", "Proficient"),
+                              as.integer)
+            )
+    }
+    .tmp |>
         dplyr::summarize(
-            dplyr::across(c("Students", "Tested", "Proficient"),
+            dplyr::across(c("Students", "Tested", "Proficient", "Score"),
                           sum),
-            Score = weighted.mean(.data$Score, .data$Students),
             `Testing Rate` = .data$Tested / .data$Students,
             `Success Rate` = .data$Proficient / .data$Tested,
-            .by = tidyselect::all_of(c(...))
+            Score = .data$Score / .data$Students,
+            .by = tidyselect::all_of(.groups)
         )
 }
