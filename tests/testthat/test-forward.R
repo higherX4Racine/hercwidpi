@@ -48,12 +48,12 @@ test_that("**wrangle_forward** summarizes to school as expected", {
                      Score = c(614.2895298, 1175.699427, 1154.949265, 382.6420502, 1554.754784, 1305.167718, 1390.459944, 350.2674766, 330.0761377, 2070.312619, 1313.815998, 1130.531237),
                      Tested = c(35, 22, 18, 34, 31, 26, 14, 37, 17, 28, 26, 17),
                      Proficient = c(14, 16, 10, 12, 13, 16, 9, 16, 3, 14, 17, 3),
-                     `Testing Rate` = c(0.833333333333333, 0.758620689655172, 0.857142857142857, 0.918918918918919, 0.794871794871795, 0.928571428571429, 0.666666666666667, 0.948717948717949, 0.607142857142857, 0.823529411764706, 0.742857142857143, 0.653846153846154),
-                     `Success Rate` = c(0.4, 0.727272727272727, 0.555555555555556, 0.352941176470588, 0.419354838709677, 0.615384615384615, 0.642857142857143, 0.432432432432432, 0.176470588235294, 0.5, 0.653846153846154, 0.176470588235294)
+                     `Testing Rate` = c(35/42, 22/29, 18/21, 34/37, 31/39, 26/28, 14/21, 37/39, 17/28, 28/34, 26/35, 17/26),
+                     `Success Rate` = c(14/35, 16/22, 10/18, 12/34, 13/31, 16/26,  9/14, 16/37,  3/17, 14/28, 17/26,  3/17)
                  ))
 })
 
-test_that("**wrangle_forward** implicitly summarizes across schoolls", {
+test_that("**wrangle_forward** implicitly summarizes across schools and districts", {
     EXAMPLE_FORWARD <- readRDS(test_path("data/pretend forward data.rds"))
     wrangled <- wrangle_forward(EXAMPLE_FORWARD,
                                 "GROUP_BY",
@@ -68,5 +68,25 @@ test_that("**wrangle_forward** implicitly summarizes across schoolls", {
                      Proficient = c(49L, 62L, 32L),
                      `Testing Rate` = c(111/134, 116/142, 78/103),
                      `Success Rate` = c(49/111, 62/116, 32/78)
+                 ))
+})
+
+test_that("**wrangle_forward** mixes implicit and explicit grouping", {
+    EXAMPLE_FORWARD <- readRDS(test_path("data/pretend forward data.rds"))
+    wrangled <- wrangle_forward(EXAMPLE_FORWARD,
+                                "DISTRICT_NAME",
+                                "GROUP_BY",
+                                "GROUP_BY_VALUE")
+    expect_equal(wrangled,
+                 tibble::tibble(
+                     DISTRICT_NAME = rep(c("[Statewide]", "Shawano Example School District", "Waupaca Demonstration Schools"), each = 3),
+                     GROUP_BY = rep("Disability Status", 9),
+                     GROUP_BY_VALUE = rep(c("SwD", "SwoD", "Unknown"), 3),
+                     Students = c(42L, 29L, 21L, 58L, 78L, 56L, 34L, 35L, 26L),
+                     Score = c(614.2895298, 1175.6994270, 1154.9492650, 1773.1019942, 1905.0222606, 1635.2438557, 2070.3126190, 1313.8159980, 1130.5312370),
+                     Tested = c(35L, 22L, 18L, 48L, 68L, 43L, 28L, 26L, 17L),
+                     Proficient = c(14L, 16L, 10L, 21L, 29L, 19L, 14L, 17L, 3L),
+                     `Testing Rate` = c(35/42, 22/29, 18/21, 48/58, 68/78, 43/56, 28/34, 26/35, 17/26),
+                     `Success Rate` = c(14/35, 16/22, 10/18, 21/48, 29/68, 19/43, 14/28, 17/26,  3/17)
                  ))
 })

@@ -24,6 +24,7 @@ reference:
   - is_tested
   - is_proficient
   - SPEC_FOR_FORWARD
+  - STRIVE_TOGETHER_FORWARD
 
 - subtitle: Specifications
   desc: >

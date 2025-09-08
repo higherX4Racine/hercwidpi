@@ -7,7 +7,7 @@
 #' @returns *&lt;lgl&gt;* `TRUE` when the `.result_codes` value contains a digit
 #' @export
 is_tested <- function(.result_codes) {
-    stringr::str_detect(.result_codes, "\\D", negate = TRUE)
+    !is.na(.result_codes) & stringr::str_detect(.result_codes, "\\D", negate = TRUE)
 }
 
 #' Helper predicate for detecting when students passed the Forward exam.
@@ -87,8 +87,9 @@ wrangle_forward <- function(.forward_data, ..., .proficiency_threshold = 3L) {
             .by = tidyselect::all_of(.groups)
         ) |>
         dplyr::summarize(
-            dplyr::across(c("Students", "Score", "Tested", "Proficient"),
-                          \(.)sum(., na.rm = TRUE)),
+            dplyr::across(c("Students", "Tested", "Proficient"),
+                          sum),
+            Score = weighted.mean(.data$Score, .data$Students),
             `Testing Rate` = .data$Tested / .data$Students,
             `Success Rate` = .data$Proficient / .data$Tested,
             .by = tidyselect::all_of(c(...))
