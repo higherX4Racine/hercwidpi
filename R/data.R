@@ -54,6 +54,32 @@
 #' @source <https://dpi.wi.gov/wisedash/download-files/type?field_wisedash_upload_type_value=hs-completion>
 "SPEC_FOR_HS_COMPLETION"
 
+#' Column specification for data about Completion at Private High Schools
+#'
+#' @format ## SPEC_FOR_PRIVATE_HS_COMPLETION
+#' A list of 17 elements
+#' \describe{
+#'   \item{SCHOOL_YEAR}{*&lt;chr&gt;*}
+#'   \item{AGENCY_TYPE}{*&lt;chr&gt;*}
+#'   \item{CESA}{*&lt;chr&gt;*}
+#'   \item{COUNTY_CODE}{*&lt;chr&gt;*}
+#'   \item{COUNTY}{*&lt;chr&gt;*}
+#'   \item{CITY}{*&lt;chr&gt;*}
+#'   \item{DISTRICT_CODE}{*&lt;chr&gt;*}
+#'   \item{SCHOOL_CODE}{*&lt;chr&gt;*}
+#'   \item{GRADE_GROUP}{*&lt;chr&gt;*}
+#'   \item{CHOICE_IND}{*&lt;chr&gt;*}
+#'   \item{DISTRICT_NAME}{*&lt;chr&gt;*}
+#'   \item{SCHOOL_NAME}{*&lt;chr&gt;*}
+#'   \item{LOW_GRADE}{*&lt;chr&gt;*}
+#'   \item{HIGH_GRADE}{*&lt;dbl&gt;*}
+#'   \item{GROUP_BY}{*&lt;chr&gt;*}
+#'   \item{GROUP_BY_VALUE}{*&lt;chr&gt;*}
+#'   \item{STUDENT_COUNT}{*&lt;int&gt;*}
+#' }
+#' @source <https://dpi.wi.gov/wisedash/download-files/type?field_wisedash_upload_type_value=hs-completion-private-school>
+"SPEC_FOR_PRIVATE_HS_COMPLETION"
+
 #' Column specification for data about Post-secondary Enrollment
 #'
 #' @format ## SPEC_FOR_PS_ENROLLMENT

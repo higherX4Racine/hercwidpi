@@ -31,6 +31,7 @@ reference:
     Definitions that describe the contents of files from DPI sources
   contents:
   - SPEC_FOR_HS_COMPLETION
+  - SPEC_FOR_PRIVATE_HS_COMPLETION
   - SPEC_FOR_PS_ENROLLMENT
 
 # articles:
