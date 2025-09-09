@@ -27,17 +27,23 @@ test_that("**count_if** filters correctly", {
 })
 
 test_that("**load_forward** handles the example sheet", {
-    expect_snapshot_value(load_forward(test_path("data/forward_example.csv")),
+    expect_snapshot_value(load_forward(test_path("data",
+                                                 "forward",
+                                                 "loading_example.csv")),
                           style = "serialize")
 })
 
 test_that("**wrangle_forward** summarizes to school as expected", {
-    EXAMPLE_FORWARD <- readRDS(test_path("data/pretend forward data.rds"))
+    EXAMPLE_FORWARD <- readRDS(test_path("data",
+                                         "forward",
+                                         "wrangling_example.rds"))
+
     wrangled <- wrangle_forward(EXAMPLE_FORWARD,
                                 "DISTRICT_CODE",
                                 "SCHOOL_CODE",
                                 "GROUP_BY",
                                 "GROUP_BY_VALUE")
+
     expect_equal(wrangled,
                  tibble::tibble(
                      DISTRICT_CODE = rep(c("0000", "0248", "1123"), c(3, 6, 3)),
@@ -54,7 +60,9 @@ test_that("**wrangle_forward** summarizes to school as expected", {
 })
 
 test_that("**wrangle_forward** implicitly summarizes across schools and districts", {
-    EXAMPLE_FORWARD <- readRDS(test_path("data/pretend forward data.rds"))
+    EXAMPLE_FORWARD <- readRDS(test_path("data",
+                                         "forward",
+                                         "wrangling_example.rds"))
     wrangled <- wrangle_forward(EXAMPLE_FORWARD,
                                 "GROUP_BY",
                                 "GROUP_BY_VALUE")
@@ -65,14 +73,16 @@ test_that("**wrangle_forward** implicitly summarizes across schools and district
                      Students = c(134L, 142L, 103L),
                      Tested = c(111L, 116L, 78L),
                      Proficient = c(49L, 62L, 32L),
-                     Score = c(1041.4045073, 1087.1458555, 965.3842203),
+                     Score = c(1008.514917, 1044.671537, 1019.920164),
                      `Testing Rate` = c(111/134, 116/142, 78/103),
                      `Success Rate` = c(49/111, 62/116, 32/78)
                  ))
 })
 
 test_that("**wrangle_forward** mixes implicit and explicit grouping", {
-    EXAMPLE_FORWARD <- readRDS(test_path("data/pretend forward data.rds"))
+    EXAMPLE_FORWARD <- readRDS(test_path("data",
+                                         "forward",
+                                         "wrangling_example.rds"))
     wrangled <- wrangle_forward(EXAMPLE_FORWARD,
                                 "DISTRICT_NAME",
                                 "GROUP_BY",
@@ -85,14 +95,16 @@ test_that("**wrangle_forward** mixes implicit and explicit grouping", {
                      Students = c(42L, 29L, 21L, 58L, 78L, 56L, 34L, 35L, 26L),
                      Tested = c(35L, 22L, 18L, 48L, 68L, 43L, 28L, 26L, 17L),
                      Proficient = c(14L, 16L, 10L, 21L, 29L, 19L, 14L, 17L, 3L),
-                     Score = c(614.2895298, 1175.6994270, 1154.9492650, 747.541632438, 952.511130300, 817.621927850, 2070.3126190, 1313.8159980, 1130.5312370),
+                     Score = c(614.2895298, 1175.6994270, 1154.9492650, 676.588935892, 899.371984385, 919.666395556, 2070.3126190, 1313.8159980, 1130.5312370),
                      `Testing Rate` = c(35/42, 22/29, 18/21, 48/58, 68/78, 43/56, 28/34, 26/35, 17/26),
                      `Success Rate` = c(14/35, 16/22, 10/18, 21/48, 29/68, 19/43, 14/28, 17/26,  3/17)
                  ))
 })
 
 test_that("**wrangle_forward** can back off of implicit grouping", {
-    EXAMPLE_FORWARD <- readRDS(test_path("data/pretend forward data.rds"))
+    EXAMPLE_FORWARD <- readRDS(test_path("data",
+                                         "forward",
+                                         "wrangling_example.rds"))
     wrangled <- wrangle_forward(EXAMPLE_FORWARD,
                                 "DISTRICT_CODE",
                                 "GROUP_BY",
@@ -105,8 +117,35 @@ test_that("**wrangle_forward** can back off of implicit grouping", {
                      Students = c(42L, 29L, 21L, 58L, 78L, 56L, 34L, 35L, 26L),
                      Tested = c(35L, 22L, 18L, 48L, 68L, 43L, 28L, 26L, 17L),
                      Proficient = c(14L, 16L, 10L, 21L, 29L, 19L, 14L, 17L, 3L),
-                     Score = c(614.2895298, 1175.6994270, 1154.9492650, 747.541632438, 952.511130300, 817.621927850, 2070.3126190, 1313.8159980, 1130.5312370),
+                     Score = c(614.2895298, 1175.6994270, 1154.9492650, 676.588935892, 899.371984385, 919.666395556, 2070.3126190, 1313.8159980, 1130.5312370),
                      `Testing Rate` = c(35/42, 22/29, 18/21, 48/58, 68/78, 43/56, 28/34, 26/35, 17/26),
                      `Success Rate` = c(14/35, 16/22, 10/18, 21/48, 29/68, 19/43, 14/28, 17/26,  3/17)
                  ))
 })
+
+test_that("**wrangle_forward** integrates missing district- and school-level data", {
+
+    EXAMPLE_FORWARD <- "data" |>
+        test_path("forward",
+                  "missing_data_example.csv") |>
+        load_forward()
+
+    wrangled <- wrangle_forward(EXAMPLE_FORWARD,
+                                "GRADE_LEVEL",
+                                "GROUP_BY",
+                                "GROUP_BY_VALUE")
+
+        expect_equal(wrangled,
+                 tibble::tibble(
+                     GRADE_LEVEL = c("3", rep("8", 3)),
+                     GROUP_BY = c("All Students", rep("Gender", 3)),
+                     GROUP_BY_VALUE = c("All Students", "Female", "Male", "Non-binary"),
+                     Students = c(182L, 164L, 210L, 164L),
+                     Tested = c(182L, 55L, 206L, 61L),
+                     Proficient = c(88L, 13L, 54L, 18L),
+                     Score = c(105.384615392, NA, 104.569116977, NA),
+                     `Testing Rate` = c(182/182, 55/164, 206/210, 61/164),
+                     `Success Rate` = c(88/182, 13/55, 54/206, 18/61)
+                 ))
+})
+

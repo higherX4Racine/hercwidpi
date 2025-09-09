@@ -70,10 +70,6 @@ wrangle_forward <- function(.forward_data, ..., .proficiency_threshold = 3L) {
     .groups <- c(...)
 
     .tmp <- .forward_data |>
-        dplyr::rename(
-            Students = "GROUP_COUNT",
-            Score = "FORWARD_AVERAGE_SCALE_SCORE"
-        ) |>
         dplyr::mutate(
             Tested = count_if(.data$STUDENT_COUNT,
                               is_tested(.data$TEST_RESULT_CODE)),
@@ -81,15 +77,12 @@ wrangle_forward <- function(.forward_data, ..., .proficiency_threshold = 3L) {
                                   is_proficient(.data$TEST_RESULT_CODE))
         ) |>
         dplyr::summarize(
-            dplyr::across(c("Students", "Score"),
-                          dplyr::first),
+            Students = dplyr::first(.data$GROUP_COUNT),
             dplyr::across(c("Tested", "Proficient"),
                           \(.)sum(., na.rm = TRUE)),
+            Score = dplyr::first(.data$FORWARD_AVERAGE_SCALE_SCORE) * .data$Tested,
             .by = tidyselect::all_of(union(.groups,
                                            c("DISTRICT_CODE", "SCHOOL_CODE")))
-        ) |>
-        dplyr::mutate(
-            Score = .data$Score * .data$Students
         )
 
     if (!("SCHOOL_CODE" %in% .groups)) {
@@ -145,7 +138,7 @@ wrangle_forward <- function(.forward_data, ..., .proficiency_threshold = 3L) {
                           sum),
             `Testing Rate` = .data$Tested / .data$Students,
             `Success Rate` = .data$Proficient / .data$Tested,
-            Score = .data$Score / .data$Students,
+            Score = .data$Score / .data$Tested,
             .by = tidyselect::all_of(.groups)
         )
 }

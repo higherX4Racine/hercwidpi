@@ -1,7 +1,7 @@
 test_that("assigns NA to correct wisedash values", {
     dumb <- "data" |>
         test_path(
-            "dumb_example.csv"
+            "read_wisedash_public_example.csv"
         ) |>
         read_wisedash_public(
             list(Foo = "i",
@@ -25,7 +25,7 @@ test_that("assigns NA to correct wisedash values", {
 test_that("different specs give different results", {
     dumb <- "data" |>
         test_path(
-            "dumb_example.csv"
+            "read_wisedash_public_example.csv"
         ) |>
         read_wisedash_public(
             list(Foo = "i",
