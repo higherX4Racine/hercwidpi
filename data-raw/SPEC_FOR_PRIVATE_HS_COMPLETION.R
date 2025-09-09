@@ -14,7 +14,7 @@
     DISTRICT_NAME = readr::col_character(),
     SCHOOL_NAME = readr::col_character(),
     LOW_GRADE = readr::col_character(),
-    HIGH_GRADE = readr::col_double(),
+    HIGH_GRADE = readr::col_character(),
     GROUP_BY = readr::col_character(),
     GROUP_BY_VALUE = readr::col_character(),
     STUDENT_COUNT = readr::col_integer()

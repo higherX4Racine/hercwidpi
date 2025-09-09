@@ -27,7 +27,6 @@
 #' @source <https://dpi.wi.gov/wisedash/download-files/type?field_wisedash_upload_type_value=Forward>
 "SPEC_FOR_FORWARD"
 
-
 #' Column specification for data about High School Completion
 #'
 #' @format ## SPEC_FOR_HS_COMPLETION
@@ -72,7 +71,7 @@
 #'   \item{DISTRICT_NAME}{*&lt;chr&gt;*}
 #'   \item{SCHOOL_NAME}{*&lt;chr&gt;*}
 #'   \item{LOW_GRADE}{*&lt;chr&gt;*}
-#'   \item{HIGH_GRADE}{*&lt;dbl&gt;*}
+#'   \item{HIGH_GRADE}{*&lt;chr&gt;*}
 #'   \item{GROUP_BY}{*&lt;chr&gt;*}
 #'   \item{GROUP_BY_VALUE}{*&lt;chr&gt;*}
 #'   \item{STUDENT_COUNT}{*&lt;int&gt;*}

@@ -22,7 +22,7 @@ A list of 17 elements
 \item{DISTRICT_NAME}{\emph{<chr>}}
 \item{SCHOOL_NAME}{\emph{<chr>}}
 \item{LOW_GRADE}{\emph{<chr>}}
-\item{HIGH_GRADE}{\emph{<dbl>}}
+\item{HIGH_GRADE}{\emph{<chr>}}
 \item{GROUP_BY}{\emph{<chr>}}
 \item{GROUP_BY_VALUE}{\emph{<chr>}}
 \item{STUDENT_COUNT}{\emph{<int>}}
