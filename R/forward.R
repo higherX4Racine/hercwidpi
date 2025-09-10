@@ -54,7 +54,7 @@ load_forward <- function(.files) {
 #' @param .proficiency_threshold *&lt;int?&gt;* the lowest score code that counts as proficient (defaults is `3`)
 #' @param ... <[`dynamic-dots`][rlang::dyn-dots]> *&lt;chr&gt;* grouping fields for computing testing and success rates.
 #'
-#' @returns a data frame with `len(...) + 6 columns`
+#' @returns a data frame with `length(...) + 6 columns`
 #' \describe{
 #'   \item{...}{each grouping field}
 #'   \item{Students}{*&lt;int&gt;* the total number of students in the group}

@@ -15,6 +15,14 @@ load_public_hs_completion <- function(.files) {
                            hercwidpi::SPEC_FOR_PUBLIC_HS_COMPLETION))
 }
 
+.is_public <- function(.hs_completion_data){
+    return(
+        length(intersect(names(.hs_completion_data),
+                         names(hercwidpi::SPEC_FOR_PUBLIC_HS_COMPLETION)))
+        > 0
+    )
+}
+
 #' Syntactic sugar for loading reports about completing private high school
 #'
 #' @inheritParams read_wisedash_public
@@ -30,14 +38,6 @@ load_private_hs_completion <- function(.files) {
                            hercwidpi::SPEC_FOR_PRIVATE_HS_COMPLETION))
 }
 
-.is_public <- function(.hs_completion_data){
-    return(
-        length(intersect(names(.hs_completion_data),
-                         names(hercwidpi::SPEC_FOR_PUBLIC_HS_COMPLETION)))
-        > 0
-    )
-}
-
 .is_private <- function(.hs_completion_data){
     return(
         length(intersect(names(.hs_completion_data),
@@ -51,9 +51,9 @@ load_private_hs_completion <- function(.files) {
 #' @param .hs_data a data frame in the format returned by [read_wisedash_public()]
 #' @param ... <[`dynamic-dots`][rlang::dyn-dots]> *&lt;chr&gt;* grouping fields for computing graduate counts and completion rates.
 #'
-#' @return a tibble with at least four columns:
+#' @return a tibble with at `length(...) + 3` columns:
 #' \describe{
-#'   \item{...}{*&lt;chr&gt;* the grouping variables specified by `...`}
+#'   \item{...}{the grouping variables specified by `...`}
 #'   \item{Students}{*&lt;int&gt;* the number of students who could have graduated by the end of the school year}
 #'   \item{Graduates}{*&lt;int&gt;* the number of students who received a high school credential by the end of the school year}
 #'   \item{Completion Rate}{*&lt;int&gt;* the number of students who received a high school credential by the end of the school year}
@@ -72,7 +72,7 @@ wrangle_hs_completion <- function(.hs_data, ...) {
         ) |>
         dplyr::summarize(
             Students = dplyr::first(.data$COHORT_COUNT),
-            Graduates = sum(.data$STUDENT_COUNT),
+            Graduates = sum(.data$STUDENT_COUNT, na.rm = TRUE),
             .by = tidyselect::all_of(union(.groups,
                                            c("DISTRICT_CODE", "SCHOOL_CODE")))
         )
@@ -85,7 +85,7 @@ wrangle_hs_completion <- function(.hs_data, ...) {
     .tmp |>
         dplyr::summarize(
             dplyr::across(c("Students", "Graduates"),
-                          sum),
+                          \(.)sum(., na.rm = TRUE)),
             `Completion Rate` = .data$Graduates / .data$Students,
             .by = tidyselect::all_of(.groups)
         )

@@ -38,10 +38,12 @@ reference:
   - SPEC_FOR_PUBLIC_HS_COMPLETION
   - SPEC_FOR_PRIVATE_HS_COMPLETION
 
-- subtitle: Specifications
+- subtitle: Post-secondary Enrollment
   desc: >
-    Definitions that describe the contents of files from DPI sources
+    specific utilities for data about enrolling in post-secondary education
   contents:
+  - load_ps_enrollment
+  - wrangle_ps_enrollment
   - SPEC_FOR_PS_ENROLLMENT
 
 # articles:

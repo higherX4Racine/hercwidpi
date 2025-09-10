@@ -12,9 +12,9 @@ wrangle_hs_completion(.hs_data, ...)
 \item{...}{<\code{\link[rlang:dyn-dots]{dynamic-dots}}> \emph{<chr>} grouping fields for computing graduate counts and completion rates.}
 }
 \value{
-a tibble with at least four columns:
+a tibble with at \code{length(...) + 3} columns:
 \describe{
-\item{...}{\emph{<chr>} the grouping variables specified by \code{...}}
+\item{...}{the grouping variables specified by \code{...}}
 \item{Students}{\emph{<int>} the number of students who could have graduated by the end of the school year}
 \item{Graduates}{\emph{<int>} the number of students who received a high school credential by the end of the school year}
 \item{Completion Rate}{\emph{<int>} the number of students who received a high school credential by the end of the school year}
