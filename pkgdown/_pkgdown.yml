@@ -26,12 +26,21 @@ reference:
   - SPEC_FOR_FORWARD
   - STRIVE_TOGETHER_FORWARD
 
+- subtitle: High School Completion
+  desc: >
+    specific utilities for data about completing high school
+  contents:
+  - load_public_hs_completion
+  - load_private_hs_completion
+  - wrangle_hs_completion
+  - SPEC_FOR_HS_COMPLETION
+  - SPEC_FOR_PUBLIC_HS_COMPLETION
+  - SPEC_FOR_PRIVATE_HS_COMPLETION
+
 - subtitle: Specifications
   desc: >
     Definitions that describe the contents of files from DPI sources
   contents:
-  - SPEC_FOR_HS_COMPLETION
-  - SPEC_FOR_PRIVATE_HS_COMPLETION
   - SPEC_FOR_PS_ENROLLMENT
 
 # articles:

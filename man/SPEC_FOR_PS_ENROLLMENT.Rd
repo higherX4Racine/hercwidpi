@@ -9,24 +9,24 @@
 
 A list of 18 elements
 \describe{
-\item{SCHOOL_YEAR}{<chr> the school year, in YYYY-YY format}
-\item{AGENCY_TYPE}{<chr> helps distinguish between district-run and independent charter schools}
-\item{CHARTER_IND}{<chr> whether or not a school is a charter}
-\item{CESA}{<chr>, which CESA, if any, the school belongs to}
-\item{COUNTY}{<chr>, the county that the school is located in}
-\item{DISTRICT_CODE}{<chr> the four-number code for each district, or "[Statewide]"}
-\item{SCHOOL_CODE}{<chr> the six-digit code for a school, or "[Districtwide]"}
-\item{GRADE_GROUP}{<chr> elementary, middle, high, k-12, etc.}
-\item{DISTRICT_NAME}{<chr> a human-readable name for a district. Not consistent across years}
-\item{SCHOOL_NAME}{<chr> a human-readable name for a school. Not consistent across years}
-\item{INITIAL_ENROLLMENT}{<chr> the time lag between graduation and enrollment}
-\item{INSTITUTION_LOCATION}{<chr> in-state or out-of-state}
-\item{INSTITUTION_LEVEL}{<chr> 2-year or 4-year}
-\item{INSTITUTION_TYPE}{<chr> public or private}
-\item{GROUP_BY}{<chr> demographic categories like race or gender}
-\item{GROUP_BY_VALUE}{<chr> demographic groups like Asian or Trans}
-\item{GROUP_COUNT}{<int> the number of students who could have enrolled in postsecondary education}
-\item{STUDENT_COUNT}{<int> the number of students who enrolled in postsecondary education}
+\item{SCHOOL_YEAR}{\emph{<chr>} the school year, in YYYY-YY format}
+\item{AGENCY_TYPE}{\emph{<chr>} helps distinguish between district-run and independent charter schools}
+\item{CHARTER_IND}{\emph{<chr>} whether or not a school is a charter}
+\item{CESA}{\emph{<chr>} which CESA, if any, the school belongs to}
+\item{COUNTY}{\emph{<chr>} the county that the school is located in}
+\item{DISTRICT_CODE}{\emph{<chr>} the four-number code for each district, or "[Statewide]"}
+\item{SCHOOL_CODE}{\emph{<chr>} the six-digit code for a school, or "[Districtwide]"}
+\item{GRADE_GROUP}{\emph{<chr>} elementary, middle, high, k-12, etc.}
+\item{DISTRICT_NAME}{\emph{<chr>} a human-readable name for a district. Not consistent across years}
+\item{SCHOOL_NAME}{\emph{<chr>} a human-readable name for a school. Not consistent across years}
+\item{INITIAL_ENROLLMENT}{\emph{<chr>} the time lag between graduation and enrollment}
+\item{INSTITUTION_LOCATION}{\emph{<chr>} in-state or out-of-state}
+\item{INSTITUTION_LEVEL}{\emph{<chr>} 2-year or 4-year}
+\item{INSTITUTION_TYPE}{\emph{<chr>} public or private}
+\item{GROUP_BY}{\emph{<chr>} demographic categories like race or gender}
+\item{GROUP_BY_VALUE}{\emph{<chr>} demographic groups like Asian or Trans}
+\item{GROUP_COUNT}{\emph{<int>} the number of students who could have enrolled in postsecondary education}
+\item{STUDENT_COUNT}{\emph{<int>} the number of students who enrolled in postsecondary education}
 }
 }
 }

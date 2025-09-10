@@ -7,25 +7,13 @@
 \format{
 \subsection{SPEC_FOR_PRIVATE_HS_COMPLETION}{
 
-A list of 17 elements
+A list of 5 elements
 \describe{
-\item{SCHOOL_YEAR}{\emph{<chr>}}
-\item{AGENCY_TYPE}{\emph{<chr>}}
-\item{CESA}{\emph{<chr>}}
 \item{COUNTY_CODE}{\emph{<chr>}}
-\item{COUNTY}{\emph{<chr>}}
 \item{CITY}{\emph{<chr>}}
-\item{DISTRICT_CODE}{\emph{<chr>}}
-\item{SCHOOL_CODE}{\emph{<chr>}}
-\item{GRADE_GROUP}{\emph{<chr>}}
 \item{CHOICE_IND}{\emph{<chr>}}
-\item{DISTRICT_NAME}{\emph{<chr>}}
-\item{SCHOOL_NAME}{\emph{<chr>}}
 \item{LOW_GRADE}{\emph{<chr>}}
 \item{HIGH_GRADE}{\emph{<chr>}}
-\item{GROUP_BY}{\emph{<chr>}}
-\item{GROUP_BY_VALUE}{\emph{<chr>}}
-\item{STUDENT_COUNT}{\emph{<int>}}
 }
 }
 }
