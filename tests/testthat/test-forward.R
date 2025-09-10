@@ -140,12 +140,12 @@ test_that("**wrangle_forward** integrates missing district- and school-level dat
                      GRADE_LEVEL = c("3", rep("8", 3)),
                      GROUP_BY = c("All Students", rep("Gender", 3)),
                      GROUP_BY_VALUE = c("All Students", "Female", "Male", "Non-binary"),
-                     Students = c(182L, 164L, 210L, 164L),
-                     Tested = c(182L, 55L, 206L, 61L),
-                     Proficient = c(88L, 13L, 54L, 18L),
-                     Score = c(105.384615392, NA, 104.569116977, NA),
-                     `Testing Rate` = c(182/182, 55/164, 206/210, 61/164),
-                     `Success Rate` = c(88/182, 13/55, 54/206, 18/61)
+                     Students = c(91L, 82L, 105L, 102L),
+                     Tested = c(91L, 55L, 103L, 61L),
+                     Proficient = c(44L, 13L, 27L, 18L),
+                     Score = c(105.3846154, 103.0, 104.757281553, 101.0),
+                     `Testing Rate` = c(91/91, 55/82, 103/105, 61/102),
+                     `Success Rate` = c(44/91, 13/55, 27/103, 18/61)
                  ))
 })
 

@@ -4,21 +4,20 @@
 \alias{wrangle_hs_completion}
 \title{Convert raw data read from WISEDash Public files into a StriveTogether-friendly format}
 \usage{
-wrangle_hs_completion(.hs_data, .district = "4620")
+wrangle_hs_completion(.hs_data, ...)
 }
 \arguments{
 \item{.hs_data}{a data frame in the format returned by \code{\link[=read_wisedash_public]{read_wisedash_public()}}}
 
-\item{.district}{optional, the code for one district, defaults to Racine Unified's code.}
+\item{...}{<\code{\link[rlang:dyn-dots]{dynamic-dots}}> \emph{<chr>} grouping fields for computing graduate counts and completion rates.}
 }
 \value{
-a tibble with five columns:
+a tibble with at least four columns:
 \describe{
-\item{SCHOOL_YEAR}{\if{html}{\out{<chr>}} the school year in YYYY-YYYY format}
-\item{Population}{\if{html}{\out{<chr>}} a demographic category defined by StriveTogether}
-\item{Gender}{\if{html}{\out{<chr>}} a gender identity recognized by StriveTogether}
-\item{Senior Class Size}{\if{html}{\out{<int>}} the number of students who could have graduated by the end of the school year}
-\item{HS Completers}{\if{html}{\out{<int>}} the number of students who received a high school credential by the end of the school year}
+\item{...}{\emph{<chr>} the grouping variables specified by \code{...}}
+\item{Students}{\emph{<int>} the number of students who could have graduated by the end of the school year}
+\item{Graduates}{\emph{<int>} the number of students who received a high school credential by the end of the school year}
+\item{Completion Rate}{\emph{<int>} the number of students who received a high school credential by the end of the school year}
 }
 }
 \description{
