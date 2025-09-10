@@ -8,6 +8,7 @@
 <url><loc>https://higherx4racine.github.io/hercwidpi/reference/SPEC_FOR_HS_COMPLETION.html</loc></url>
 <url><loc>https://higherx4racine.github.io/hercwidpi/reference/SPEC_FOR_PRIVATE_HS_COMPLETION.html</loc></url>
 <url><loc>https://higherx4racine.github.io/hercwidpi/reference/SPEC_FOR_PS_ENROLLMENT.html</loc></url>
+<url><loc>https://higherx4racine.github.io/hercwidpi/reference/SPEC_FOR_PUBLIC_HS_COMPLETION.html</loc></url>
 <url><loc>https://higherx4racine.github.io/hercwidpi/reference/STRIVE_TOGETHER_FORWARD.html</loc></url>
 <url><loc>https://higherx4racine.github.io/hercwidpi/reference/batch_excerpt_by_district.html</loc></url>
 <url><loc>https://higherx4racine.github.io/hercwidpi/reference/count_if.html</loc></url>
@@ -16,7 +17,10 @@
 <url><loc>https://higherx4racine.github.io/hercwidpi/reference/is_proficient.html</loc></url>
 <url><loc>https://higherx4racine.github.io/hercwidpi/reference/is_tested.html</loc></url>
 <url><loc>https://higherx4racine.github.io/hercwidpi/reference/load_forward.html</loc></url>
+<url><loc>https://higherx4racine.github.io/hercwidpi/reference/load_private_hs_completion.html</loc></url>
+<url><loc>https://higherx4racine.github.io/hercwidpi/reference/load_public_hs_completion.html</loc></url>
 <url><loc>https://higherx4racine.github.io/hercwidpi/reference/read_wisedash_public.html</loc></url>
 <url><loc>https://higherx4racine.github.io/hercwidpi/reference/wrangle_forward.html</loc></url>
+<url><loc>https://higherx4racine.github.io/hercwidpi/reference/wrangle_hs_completion.html</loc></url>
 </urlset>
 
