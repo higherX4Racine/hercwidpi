@@ -102,14 +102,3 @@
 #' }
 #' @source <https://dpi.wi.gov/wisedash/download-files/type?field_wisedash_upload_type_value=Postsecondary>
 "SPEC_FOR_PS_ENROLLMENT"
-
-#' Use this to semi-join Forward results and only get Strive-relevant data
-#'
-#' @format ## STRIVE_TOGETHER_FORWARD
-#' A 2 x 3 table
-#' \describe{
-#'   \item{TEST_GROUP}{*&lt;chr&gt;* "Forward"}
-#'   \item{GRADE_LEVEL}{*&lt;int&gt;* `3L` or `8L`}
-#'   \item{TEST_SUBJECT}{*&lt;chr&gt;* "ELA" for 3rd grade and "Mathematics" for 8th}
-#' }
-"STRIVE_TOGETHER_FORWARD"

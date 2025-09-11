@@ -19,7 +19,9 @@ Imports:
     dplyr,
     purrr,
     readr,
-    rlang
+    rlang,
+    stringr,
+    tidyr
 Remotes:
     higherx4racine/hercipeds
 Suggests: 

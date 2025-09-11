@@ -14,7 +14,7 @@ load_ps_enrollment <- function(.files) {
 
 #' Summarize post-secondary enrollment information
 #'
-#' @param .ps_enrollment_data a data frame with columns from [`SPEC_FOR_PS_ENROLLMENT`]
+#' @param .DATA a data frame with columns from [`SPEC_FOR_PS_ENROLLMENT`]
 #' @param ... <[`dynamic-dots`][rlang::dyn-dots]> *&lt;chr&gt;* grouping fields for computing post-secondary enrollment counts and rates
 #'
 #' @returns a data frame with `length(...) + 6 columns`

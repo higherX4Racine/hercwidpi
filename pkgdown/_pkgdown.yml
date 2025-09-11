@@ -25,7 +25,6 @@ reference:
   - is_tested
   - is_proficient
   - SPEC_FOR_FORWARD
-  - STRIVE_TOGETHER_FORWARD
 
 - subtitle: High School Completion
   desc: >
@@ -45,11 +44,3 @@ reference:
   - load_ps_enrollment
   - wrangle_ps_enrollment
   - SPEC_FOR_PS_ENROLLMENT
-
-# articles:
-# - title: StriveTogether Outcome Areas
-#   desc: >
-#     demonstrations of computing 3rd grade reading, 8th grade math, high school
-#     completion, and post-secondary enrollment.
-#   contents:
-#   -

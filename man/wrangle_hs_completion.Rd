@@ -4,10 +4,10 @@
 \alias{wrangle_hs_completion}
 \title{Convert raw data read from WISEDash Public files into a StriveTogether-friendly format}
 \usage{
-wrangle_hs_completion(.hs_data, ...)
+wrangle_hs_completion(.DATA, ...)
 }
 \arguments{
-\item{.hs_data}{a data frame in the format returned by \code{\link[=read_wisedash_public]{read_wisedash_public()}}}
+\item{.DATA}{a data frame in the format returned by \code{\link[=read_wisedash_public]{read_wisedash_public()}}}
 
 \item{...}{<\code{\link[rlang:dyn-dots]{dynamic-dots}}> \emph{<chr>} grouping fields for computing graduate counts and completion rates.}
 }

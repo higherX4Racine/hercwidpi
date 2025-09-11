@@ -48,7 +48,7 @@ load_private_hs_completion <- function(.files) {
 
 #' Convert raw data read from WISEDash Public files into a StriveTogether-friendly format
 #'
-#' @param .hs_data a data frame in the format returned by [read_wisedash_public()]
+#' @param .DATA a data frame in the format returned by [read_wisedash_public()]
 #' @param ... <[`dynamic-dots`][rlang::dyn-dots]> *&lt;chr&gt;* grouping fields for computing graduate counts and completion rates.
 #'
 #' @return a tibble with at `length(...) + 3` columns:
@@ -60,11 +60,11 @@ load_private_hs_completion <- function(.files) {
 #' }
 #' @export
 #' @seealso [read_wisedash_public()]
-wrangle_hs_completion <- function(.hs_data, ...) {
+wrangle_hs_completion <- function(.DATA, ...) {
 
     .groups <- c(...)
 
-    .tmp <- .hs_data |>
+    .tmp <- .DATA |>
         dplyr::filter(
             stringr::str_detect(.data$COMPLETION_STATUS,
                                 stringr::regex("^Completed",
