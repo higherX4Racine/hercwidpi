@@ -7,7 +7,9 @@
 
 <!-- badges: end -->
 
-utilities and specifications for parsing data from the WI DPI
+utilities and specifications for parsing
+[data](https://dpi.wi.gov/wisedash/download-files) from Wisconsin’s
+[Department of Public Instruction](https://dpi.wi.gov/), or DPI.
 
 ## Installation
 
