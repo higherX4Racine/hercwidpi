@@ -16,11 +16,8 @@ a data frame with \verb{length(...) + 6 columns}
 \describe{
 \item{...}{each grouping field}
 \item{Students}{\emph{<int>} the total number of students in the group}
-\item{Score}{\emph{<dbl>} the mean scale score of the group's students}
-\item{Tested}{\emph{<int>} the number of students in the group who took the test}
-\item{Proficient}{\emph{<int>} the number of students who were tested and achieved proficiency}
-\item{Testing Rate}{\emph{<dbl>} the proportion of students in the group who took the test}
-\item{Proficiency Rate}{\emph{<dbl>} the proportion of students who were tested and achieved proficiency}
+\item{Enrollers}{\emph{<dbl>} the mean scale score of the group's students}
+\item{Enrollment Rate}{\emph{<dbl>} the proportion of students who were tested and achieved proficiency}
 }
 }
 \description{

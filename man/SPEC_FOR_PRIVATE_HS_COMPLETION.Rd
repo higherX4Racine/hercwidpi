@@ -9,11 +9,11 @@
 
 A list of 5 elements
 \describe{
-\item{COUNTY_CODE}{\emph{<chr>}}
-\item{CITY}{\emph{<chr>}}
-\item{CHOICE_IND}{\emph{<chr>}}
-\item{LOW_GRADE}{\emph{<chr>}}
-\item{HIGH_GRADE}{\emph{<chr>}}
+\item{COUNTY_CODE}{\verb{<chr>}}
+\item{CITY}{\verb{<chr>}}
+\item{CHOICE_IND}{\verb{<chr>}}
+\item{LOW_GRADE}{\verb{<chr>}}
+\item{HIGH_GRADE}{\verb{<chr>}}
 }
 }
 }

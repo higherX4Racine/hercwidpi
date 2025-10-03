@@ -21,11 +21,8 @@ load_ps_enrollment <- function(.files) {
 #' \describe{
 #'   \item{...}{each grouping field}
 #'   \item{Students}{*&lt;int&gt;* the total number of students in the group}
-#'   \item{Score}{*&lt;dbl&gt;* the mean scale score of the group's students}
-#'   \item{Tested}{*&lt;int&gt;* the number of students in the group who took the test}
-#'   \item{Proficient}{*&lt;int&gt;* the number of students who were tested and achieved proficiency}
-#'   \item{Testing Rate}{*&lt;dbl&gt;* the proportion of students in the group who took the test}
-#'   \item{Proficiency Rate}{*&lt;dbl&gt;* the proportion of students who were tested and achieved proficiency}
+#'   \item{Enrollers}{*&lt;dbl&gt;* the mean scale score of the group's students}
+#'   \item{Enrollment Rate}{*&lt;dbl&gt;* the proportion of students who were tested and achieved proficiency}
 #' }
 #' @export
 wrangle_ps_enrollment <- function(.DATA, ...) {

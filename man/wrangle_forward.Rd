@@ -4,10 +4,10 @@
 \alias{wrangle_forward}
 \title{Summarize forward results}
 \usage{
-wrangle_forward(.forward_data, ..., .proficiency_threshold = 3L)
+wrangle_forward(.DATA, ..., .proficiency_threshold = 3L)
 }
 \arguments{
-\item{.forward_data}{a data frame with columns from \code{\link{SPEC_FOR_FORWARD}}}
+\item{.DATA}{a data frame with columns from \code{\link{SPEC_FOR_FORWARD}}}
 
 \item{...}{<\code{\link[rlang:dyn-dots]{dynamic-dots}}> \emph{<chr>} grouping fields for computing testing and success rates.}
 

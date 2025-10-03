@@ -9,11 +9,11 @@
 
 A list of 5 elements
 \describe{
-\item{CHARTER_IND}{\emph{<chr>} whether or not a school is a charter}
-\item{COHORT}{\emph{<int>} expected graduation year, e.g. 2010 for the 2009-10 school year}
-\item{COMPLETION_STATUS}{\emph{<chr>} graduated normally, graduated with HSED, continuing, not}
-\item{TIMEFRAME}{\emph{<chr>} whether it is the 4-, 5-, or 6-year rate, etc.}
-\item{COHORT_COUNT}{\emph{<int>} the number of students who could have completed high school}
+\item{CHARTER_IND}{\verb{<chr>} whether or not a school is a charter}
+\item{COHORT}{\verb{<int>} expected graduation year, e.g. 2010 for the 2009-10 school year}
+\item{COMPLETION_STATUS}{\verb{<chr>} graduated normally, graduated with HSED, continuing, not}
+\item{TIMEFRAME}{\verb{<chr>} whether it is the 4-, 5-, or 6-year rate, etc.}
+\item{COHORT_COUNT}{\verb{<int>} the number of students who could have completed high school}
 }
 }
 }

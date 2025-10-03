@@ -50,7 +50,7 @@ load_forward <- function(.files) {
 
 #' Summarize forward results
 #'
-#' @param .forward_data a data frame with columns from [`SPEC_FOR_FORWARD`]
+#' @param .DATA a data frame with columns from [`SPEC_FOR_FORWARD`]
 #' @param .proficiency_threshold *&lt;int?&gt;* the lowest score code that counts as proficient (defaults is `3`)
 #' @param ... <[`dynamic-dots`][rlang::dyn-dots]> *&lt;chr&gt;* grouping fields for computing testing and success rates.
 #'
@@ -65,11 +65,11 @@ load_forward <- function(.files) {
 #'   \item{Proficiency Rate}{*&lt;dbl&gt;* the proportion of students who were tested and achieved proficiency}
 #' }
 #' @export
-wrangle_forward <- function(.forward_data, ..., .proficiency_threshold = 3L) {
+wrangle_forward <- function(.DATA, ..., .proficiency_threshold = 3L) {
 
     .groups <- c(...)
 
-    .tmp <- .forward_data |>
+    .tmp <- .DATA |>
         dplyr::mutate(
             Tested = count_if(.data$STUDENT_COUNT,
                               is_tested(.data$TEST_RESULT_CODE)),

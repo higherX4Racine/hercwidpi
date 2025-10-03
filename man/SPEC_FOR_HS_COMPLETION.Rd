@@ -9,18 +9,18 @@
 
 A list of 17 elements
 \describe{
-\item{SCHOOL_YEAR}{\emph{<chr>} the school year, in YYYY-YY format}
-\item{AGENCY_TYPE}{\emph{<chr>} helps distinguish between district-run and independent charter schools}
-\item{CESA}{\emph{<chr>} which CESA, if any, the school belongs to}
-\item{COUNTY}{\emph{<chr>} the county that the school is located in}
-\item{DISTRICT_CODE}{\emph{<chr>} the four-number code for each district, or "[Statewide]"}
-\item{SCHOOL_CODE}{\emph{<chr>} the six-digit code for a school, or "[Districtwide]"}
-\item{GRADE_GROUP}{\emph{<chr>} elementary, middle, high, k-12, etc.}
-\item{DISTRICT_NAME}{\emph{<chr>} a human-readable name for a district. Not consistent across years}
-\item{SCHOOL_NAME}{\emph{<chr>} a human-readable name for a school. Not consistent across years}
-\item{GROUP_BY}{\emph{<chr>} demographic categories like race or gender}
-\item{GROUP_BY_VALUE}{\emph{<chr>} demographic groups like Asian or Trans}
-\item{STUDENT_COUNT}{\emph{<int>} the number of students who completed high school}
+\item{SCHOOL_YEAR}{\verb{<chr>} the school year, in YYYY-YY format}
+\item{AGENCY_TYPE}{\verb{<chr>} helps distinguish between district-run and independent charter schools}
+\item{CESA}{\verb{<chr>} which CESA, if any, the school belongs to}
+\item{COUNTY}{\verb{<chr>} the county that the school is located in}
+\item{DISTRICT_CODE}{\verb{<chr>} the four-number code for each district, or "[Statewide]"}
+\item{SCHOOL_CODE}{\verb{<chr>} the six-digit code for a school, or "[Districtwide]"}
+\item{GRADE_GROUP}{\verb{<chr>} elementary, middle, high, k-12, etc.}
+\item{DISTRICT_NAME}{\verb{<chr>} a human-readable name for a district. Not consistent across years}
+\item{SCHOOL_NAME}{\verb{<chr>} a human-readable name for a school. Not consistent across years}
+\item{GROUP_BY}{\verb{<chr>} demographic categories like race or gender}
+\item{GROUP_BY_VALUE}{\verb{<chr>} demographic groups like Asian or Trans}
+\item{STUDENT_COUNT}{\verb{<int>} the number of students who completed high school}
 }
 }
 }
