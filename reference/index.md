@@ -1,0 +1,69 @@
+# Package index
+
+## WISEDash Public
+
+utilities for reading and wrangling data from WISEDash Public
+
+- [`read_wisedash_public()`](https://higherx4racine.github.io/hercwidpi/reference/read_wisedash_public.md)
+  : Import data from WISEDash Public into a tidy format
+- [`wrangle_redactions()`](https://higherx4racine.github.io/hercwidpi/reference/wrangle_redactions.md)
+  : Handle situations where missing data at the school level has
+  propagated to missing data at the district level
+
+### Agency Information
+
+characteristics of schools or districts, like location, size, and title
+1
+
+- [`SPEC_FOR_AGENCY_INFO`](https://higherx4racine.github.io/hercwidpi/reference/SPEC_FOR_AGENCY_INFO.md)
+  : Column specification for data about districts and school buildings
+
+### Forward Exam
+
+specific utilities for data about the Forward Exam
+
+- [`load_forward()`](https://higherx4racine.github.io/hercwidpi/reference/load_forward.md)
+  : Syntactic sugar for loading reports about the Forward Exam.
+- [`wrangle_forward()`](https://higherx4racine.github.io/hercwidpi/reference/wrangle_forward.md)
+  : Summarize forward results
+- [`is_tested()`](https://higherx4racine.github.io/hercwidpi/reference/is_tested.md)
+  : Helper predicate for detecting when students took the Forward exam.
+- [`is_proficient()`](https://higherx4racine.github.io/hercwidpi/reference/is_proficient.md)
+  : Helper predicate for detecting when students passed the Forward
+  exam.
+- [`SPEC_FOR_FORWARD`](https://higherx4racine.github.io/hercwidpi/reference/SPEC_FOR_FORWARD.md)
+  : Column specification for data about performance on the Forward Exam
+
+### High School Completion
+
+specific utilities for data about completing high school
+
+- [`load_public_hs_completion()`](https://higherx4racine.github.io/hercwidpi/reference/load_public_hs_completion.md)
+  : Syntactic sugar for loading reports about completing public high
+  school
+- [`load_private_hs_completion()`](https://higherx4racine.github.io/hercwidpi/reference/load_private_hs_completion.md)
+  : Syntactic sugar for loading reports about completing private high
+  school
+- [`wrangle_hs_completion()`](https://higherx4racine.github.io/hercwidpi/reference/wrangle_hs_completion.md)
+  : Convert raw data read from WISEDash Public files into a
+  StriveTogether-friendly format
+- [`SPEC_FOR_HS_COMPLETION`](https://higherx4racine.github.io/hercwidpi/reference/SPEC_FOR_HS_COMPLETION.md)
+  : Column specification for data about High School Completion
+- [`SPEC_FOR_PUBLIC_HS_COMPLETION`](https://higherx4racine.github.io/hercwidpi/reference/SPEC_FOR_PUBLIC_HS_COMPLETION.md)
+  : A specification for columns found only in reports about completing
+  public high school.
+- [`SPEC_FOR_PRIVATE_HS_COMPLETION`](https://higherx4racine.github.io/hercwidpi/reference/SPEC_FOR_PRIVATE_HS_COMPLETION.md)
+  : Column specification for data about Completion at Private High
+  Schools
+
+### Post-secondary Enrollment
+
+specific utilities for data about enrolling in post-secondary education
+
+- [`load_ps_enrollment()`](https://higherx4racine.github.io/hercwidpi/reference/load_ps_enrollment.md)
+  : Syntactic sugar for loading reports about enrollment after high
+  school completion.
+- [`wrangle_ps_enrollment()`](https://higherx4racine.github.io/hercwidpi/reference/wrangle_ps_enrollment.md)
+  : Summarize post-secondary enrollment information
+- [`SPEC_FOR_PS_ENROLLMENT`](https://higherx4racine.github.io/hercwidpi/reference/SPEC_FOR_PS_ENROLLMENT.md)
+  : Column specification for data about Post-secondary Enrollment
