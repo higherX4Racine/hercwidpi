@@ -16,6 +16,12 @@ reference:
   - read_wisedash_public
   - wrangle_redactions
 
+- subtitle: Agency Information
+  desc: >
+    characteristics of schools or districts, like location, size, and title 1
+  contents:
+  - SPEC_FOR_AGENCY_INFO
+
 - subtitle: Forward Exam
   desc: >
     specific utilities for data about the Forward Exam

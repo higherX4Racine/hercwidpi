@@ -1,3 +1,39 @@
+## Copyright (C) 2026 by Higher Expectations for Racine County
+
+#' Column specification for data about districts and school buildings
+#'
+#' @format ## `SPEC_FOR_AGENCY_INFO`
+#' A list of 25 elements
+#' \describe{
+#'   \item{SCHOOL_YEAR}{`<chr>` the school year, in YYYY-YY format}
+#'   \item{CESA}{`<chr>` which CESA, if any, the school belongs to}
+#'   \item{COUNTY_CODE}{`<int>` A non-FIPS ID number for the county}
+#'   \item{COUNTY_NAME}{`<chr>` The name of the county}
+#'   \item{ATHLETIC_CONFERENCE_CODE}{`<int>` a unique identifier for the agency's conference}
+#'   \item{ATHLETIC_CONFERENCE_NAME}{`<chr>` the name of the agency's conference}
+#'   \item{WTCS_CODE}{`<chr>` a two-letter code that I know nothing about}
+#'   \item{LOCALE_CODE}{`<int>` a two-digit code that I know nothing about}
+#'   \item{LOCALE_NAME}{`<chr>`a geographic categorization like "Urban" or "Rural"}
+#'   \item{LATITUDE}{`<dbl>` distance from the equator}
+#'   \item{LONGITUDE}{`<dbl>` distance from Greenwich, England}
+#'   \item{FULL_NCES_CODE}{`<chr>` a thirteen-digit, FIPS-like code}
+#'   \item{DISTRICT_CODE}{`<chr>` the four-number code for each district, or "\[Statewide\]"}
+#'   \item{SCHOOL_CODE}{`<chr>` the six-digit code for a school, or "\[Districtwide\]"}
+#'   \item{DISTRICT_NAME}{`<chr>` a human-readable name for a district. Not consistent across years}
+#'   \item{AGENCY_TYPE}{`<chr>` helps distinguish between district-run and independent charter schools}
+#'   \item{SCHOOL_NAME}{`<chr>` a human-readable name for a school. Not consistent across years}
+#'   \item{GRADE_GROUP}{`<chr>` elementary, middle, high, k-12, etc.}
+#'   \item{LOW_GRADE}{`<chr>` the earliest grade in this school or district}
+#'   \item{HIGH_GRADE}{`<chr>` the latest grade in this school or district}
+#'   \item{SCHOOL_SIZE}{`<chr>` qualitative, from Tiny to Large, including Unknown}
+#'   \item{CHARTER_IND}{`<chr>` "No" or "Yes"}
+#'   \item{VIRTUAL_SCH_IND}{`<chr>` "No" or "Yes"}
+#'   \item{TITLE_1A_PROGRAM_CODE}{`<chr>` a 3- or 4-character code about Title 1 status}
+#'   \item{TITLE_1A_PROGRAM_NAME}{`<chr>` a human-readable description of Title 1 status}
+#' }
+#' @source <https://dpi.wi.gov/wisedash/public/download-files?field_wisedash_upload_type_value=Agency>
+"SPEC_FOR_AGENCY_INFO"
+
 #' Column specification for data about performance on the Forward Exam
 #'
 #' @format ## `SPEC_FOR_FORWARD`
