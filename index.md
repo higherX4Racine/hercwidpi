@@ -10,6 +10,7 @@ You can install the development version of hercwidpi from
 [GitHub](https://github.com/) with:
 
 ``` r
+
 # install.packages("pak")
 pak::pak("higherX4Racine/hercwidpi")
 ```
