@@ -9,7 +9,7 @@ read_wisedash_public(.files, .spec)
 \arguments{
 \item{.files}{paths to csv files that contain data from WISEDash public}
 
-\item{.spec}{a list of column specifications for \code{\link[readr:read_delim]{readr::read_csv()}}}
+\item{.spec}{a list of column specifications for \code{\link[readr:read_csv]{readr::read_csv()}}}
 }
 \value{
 a data frame with some format determined by \code{.spec}
