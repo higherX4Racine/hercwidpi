@@ -34,6 +34,29 @@
 #' @source <https://dpi.wi.gov/wisedash/public/download-files?field_wisedash_upload_type_value=Agency>
 "SPEC_FOR_AGENCY_INFO"
 
+#' Column specification for data about student demographics
+#'
+#' @format ## `SPEC_FOR_ENROLLMENT`
+#' A list of 14 elements
+#' \describe{
+#'   \item{SCHOOL_YEAR}{`<chr>` the school year, in YYYY-YY format}
+#'   \item{AGENCY_TYPE}{`<chr>` helps distinguish between district-run and independent charter schools}
+#'   \item{CESA}{`<chr>` which CESA, if any, the school belongs to}
+#'   \item{COUNTY}{`<chr>` the county that the school is located in}
+#'   \item{DISTRICT_CODE}{`<chr>` the four-number code for each district, or "\[Statewide\]"}
+#'   \item{SCHOOL_CODE}{`<chr>` the six-digit code for a school, or "\[Districtwide\]"}
+#'   \item{GRADE_GROUP}{`<chr>` elementary, middle, high, k-12, etc.}
+#'   \item{CHARTER_IND}{`<chr>` whether or not a school is a charter}
+#'   \item{DISTRICT_NAME}{`<chr>` a human-readable name for a district. Not consistent across years}
+#'   \item{SCHOOL_NAME}{`<chr>` a human-readable name for a school. Not consistent across years}
+#'   \item{GROUP_BY}{`<chr>` demographic categories like race or gender}
+#'   \item{GROUP_BY_VALUE}{`<chr>` demographic groups like Asian or Trans}
+#'   \item{STUDENT_COUNT}{`<int>` the number of students in this demographic category}
+#'   \item{PERCENT_OF_GROUP}{`<dbl>` the percentage of students in this demographic category}
+#' }
+#' @source <https://dpi.wi.gov/wisedash/public/download-files?field_wisedash_upload_type_value=Enrollment>
+"SPEC_FOR_ENROLLMENT"
+
 #' Column specification for data about performance on the Forward Exam
 #'
 #' @format ## `SPEC_FOR_FORWARD`

@@ -22,6 +22,12 @@ reference:
   contents:
   - SPEC_FOR_AGENCY_INFO
 
+- subtitle: Enrollment
+  desc: >
+    student populations by demographic group
+  contents:
+  - SPEC_FOR_ENROLLMENT
+
 - subtitle: Forward Exam
   desc: >
     specific utilities for data about the Forward Exam
