@@ -11,7 +11,7 @@ read_wisedash_public <- function(.files, .spec){
             ~ readr::read_csv(
                 .,
                 col_types = .spec,
-                na = c("", "*")
+                na = c("", "*", "NA")
             )
         ) |>
         purrr::list_rbind()
