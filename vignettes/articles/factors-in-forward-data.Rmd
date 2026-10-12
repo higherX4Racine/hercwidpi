@@ -1,0 +1,87 @@
+---
+title: "Factor Fields in FORWARD Data"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(hercwidpi)
+
+WISEDASH_DIR <- hiRx::input_path("Iterations",
+                                 "WISEDash")
+
+file_checksum <- function(.x) {
+    WISEDASH_DIR |> file.path(.x) |> tools::md5sum()
+}
+
+```
+
+```{r}
+#| label: import-forward-info
+#| cache-extra: !expr "file_checksum('forward.rds')"
+
+RAW_FORWARD <- WISEDASH_DIR |>
+    file.path("forward.rds") |>
+    readRDS() |>
+    dplyr::select(
+        !tidyselect::any_of(c(
+            "COUNTY",
+            "DISTRICT_NAME",
+            "SCHOOL_NAME"
+        ))
+    ) |>
+    hercwidpi::recode_agency_fields()
+
+pillar::glimpse(RAW_FORWARD)
+
+```
+
+```{r}
+#| label: inspect-forward-factors
+#| dependson:
+#| - import-forward-info
+#| output: asis
+
+c(
+    "AGENCY_TYPE",
+    "GRADE_GROUP",
+    "CHARTER_IND",
+    "TEST_SUBJECT",
+    "TEST_GROUP",
+    "GROUP_BY",
+    "GROUP_BY_VALUE"
+) |>
+    purrr::walk(
+        \(.field) {
+            cat("####", .field, "\n\n")
+            RAW_FORWARD |>
+                dplyr::summarize(
+                    dplyr::across("SCHOOL_YEAR",
+                                  list(First = dplyr::first,
+                                       Last = dplyr::last),
+                                  .names = "{.fn}"),
+                    .by = tidyselect::all_of(.field)
+                ) |>
+                knitr::kable(
+                    align = "lrr"
+                ) |>
+                print()
+            cat("\n\n")
+        }
+    )
+
+cat("#### Test results\n\n")
+RAW_FORWARD |>
+    dplyr::count(
+        .data$TEST_RESULT_CODE,
+        .data$TEST_RESULT,
+    ) |>
+    knitr::kable() |>
+    print()
+cat("\n\n")
+```

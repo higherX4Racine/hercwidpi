@@ -15,18 +15,24 @@ reference:
   contents:
   - read_wisedash_public
   - wrangle_redactions
+  - update_big_tables
+  - school_year
 
 - subtitle: Agency Information
   desc: >
     characteristics of schools or districts, like location, size, and title 1
   contents:
   - SPEC_FOR_AGENCY_INFO
+  - load_agency_info
+  - recode_agency_fields
+  - rectify_agency_identities
 
 - subtitle: Enrollment
   desc: >
     student populations by demographic group
   contents:
   - SPEC_FOR_ENROLLMENT
+  - load_enrollment
 
 - subtitle: Forward Exam
   desc: >

@@ -1,0 +1,178 @@
+---
+title: "invent_schema"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(hercwidpi)
+```
+
+```{r}
+#| label: find-spec-names
+
+SPEC_NAMES <- data(package = "hercwidpi") |>
+    purrr::pluck("results") |>
+    (\(.).[, 3])() |>
+    stringr::str_subset("^SPEC")
+
+hiRx::print_array_as_column(SPEC_NAMES)
+```
+
+
+```{r}
+#| label: find-spec-columns
+SPEC_COLUMNS <- SPEC_NAMES |>
+    rlang::set_names() |>
+    purrr::map(
+        get
+    ) |>
+    purrr::map(
+        \(.) tibble::tibble(Column = names(.),
+                            Order = seq_along(.))
+    ) |>
+    purrr::list_rbind(
+        names_to = "Specification"
+    ) |>
+    dplyr::mutate(
+        Specification = .data$Specification |>
+            stringr::str_remove("SPEC_FOR_") |>
+            stringr::str_replace_all("_", " ") |>
+            stringr::str_to_title()
+    )
+
+SPEC_COLUMNS |>
+    tidyr::pivot_wider(
+        names_from = "Specification",
+        values_from = "Order",
+        values_fill = 0
+    ) |>
+    dplyr::select(
+        "Column",
+        "Enrollment",
+        "Enrollment By Grade",
+        "Attendance",
+        "Absenteeism",
+        "Forward",
+        "Hs Completion",
+        "Public Hs Completion",
+        "Private Hs Completion",
+        "Ps Enrollment",
+        "Agency Info"
+    ) |>
+    dplyr::arrange(
+        dplyr::across(c(
+            "Enrollment",
+            "Enrollment By Grade",
+            "Attendance",
+            "Absenteeism",
+            "Forward",
+            "Hs Completion",
+            "Public Hs Completion",
+            "Private Hs Completion",
+            "Ps Enrollment",
+            "Agency Info",
+            "Column"
+        ))
+    ) |>
+    knitr::kable()
+```
+
+```{r}
+#| label: define-fields
+FIELDS <- list(
+    Universal = c(
+        "SCHOOL_YEAR",
+        "AGENCY_TYPE",
+        "CESA",
+        "COUNTY",
+        "DISTRICT_CODE",
+        "SCHOOL_CODE",
+        "GRADE_GROUP",
+        "CHARTER_IND",
+        "DISTRICT_NAME",
+        "SCHOOL_NAME"
+    ),
+    Disaggregation = c(
+        "GROUP_BY",
+        "GROUP_BY_VALUE"
+    ),
+    Absenteeism = c(
+        "ABSENTEE_MEASURE",
+        "ABSENCE_COUNT",
+        "ABSENCE_RATE"
+    ),
+    Attendance = c(
+        "POSSIBLE_DAYS_OF_ATTENDANCE",
+        "ACTUAL_DAYS_OF_ATTENDANCE",
+        "ATTENDANCE_RATE"
+    ),
+    Agency = c(
+        "COUNTY_NAME",
+        "ATHLETIC_CONFERENCE_CODE",
+        "ATHLETIC_CONFERENCE_NAME",
+        "WTCS_CODE",
+        "LOCALE_CODE",
+        "LOCALE_NAME",
+        "LATITUDE",
+        "LONGITUDE",
+        "FULL_NCES_CODE",
+        "SCHOOL_SIZE",
+        "VIRTUAL_SCH_IND",
+        "TITLE_1A_PROGRAM_CODE",
+        "TITLE_1A_PROGRAM_NAME"
+    ),
+    `Agency or Private` = c(
+        "COUNTY_CODE",
+        "CITY",
+        "CHOICE_IND",
+        "LOW_GRADE",
+        "HIGH_GRADE"
+    ),
+    Forward = c(
+        "TEST_SUBJECT",
+        "TEST_RESULT",
+        "TEST_RESULT_CODE",
+        "TEST_GROUP",
+        "FORWARD_AVERAGE_SCALE_SCORE"
+    ),
+    `Grade Level` = c(
+        "GRADE_LEVEL",
+        "GROUP_COUNT"
+    ),
+    `HS Completion` = c(
+        "COHORT",
+        "COMPLETION_STATUS",
+        "TIMEFRAME",
+        "COHORT_COUNT"
+    ),
+    `PS Enrollment` = c(
+        "INITIAL_ENROLLMENT",
+        "INSTITUTION_LOCATION",
+        "INSTITUTION_LEVEL",
+        "INSTITUTION_TYPE"
+    ),
+    Value = c(
+        "STUDENT_COUNT",
+        "PERCENT_OF_GROUP"
+    )
+)
+
+```
+
+```{r}
+#| label: what-is-missing
+
+SPEC_COLUMNS |>
+    dplyr::pull("Column") |>
+    unique() |>
+    setdiff(
+        purrr::reduce(FIELDS, c)
+    ) |>
+    hiRx::print_array_as_column()
+```
